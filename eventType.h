@@ -1,0 +1,11 @@
+#pragma once
+
+enum eventType
+{
+	MAIN_EVENT,
+		MOVE_EVENT,
+	TIMER_EVENT,
+		MOVE_TIMER_EVENT,
+	BACKGROUND_EVENT,
+		KEYBOARD_EVENT
+};
