@@ -6,6 +6,8 @@
 
 #define MAP_BLANK '+'
 
+using std::vector;
+
 class map
 {
 public:
@@ -28,7 +30,7 @@ public:
 	char** getPaintingMap();
 
 private:
-	 std::vector<vector<mapNode>> table;
+	 vector<vector<mapNode>> table;
 
 	 bool random_generate();
 };

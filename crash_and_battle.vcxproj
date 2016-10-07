@@ -166,15 +166,15 @@
     <ClInclude Include="person.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="pos.h" />
-    <ClInclude Include="sign.h" />
+    <ClInclude Include="elementSign.h" />
     <ClInclude Include="timerEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="animal.cpp" />
+    <ClCompile Include="back.cpp" />
     <ClCompile Include="backgroundQueue.cpp" />
     <ClCompile Include="backMainQueue.cpp" />
     <ClCompile Include="backTimerQueue.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="mapNode.cpp" />
     <ClCompile Include="moveTimerEvent.cpp" />

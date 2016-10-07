@@ -19,85 +19,100 @@
     <Filter Include="Source Files\back">
       <UniqueIdentifier>{130389e5-a713-4a53-b1bd-b120173843d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\back\elements">
+      <UniqueIdentifier>{63642e70-b22d-435b-8ba8-2699b3e70c3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\back\events">
+      <UniqueIdentifier>{f20600fc-fe29-49ca-b218-6379fd1178d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\back\queues">
+      <UniqueIdentifier>{a48cce95-27ed-408a-913a-7c0036ecb3e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\back\map">
+      <UniqueIdentifier>{1085ca22-8fee-43f5-95b1-099308d11f10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\back\elements\animals">
+      <UniqueIdentifier>{734e1dbb-24ed-4d0b-a714-cb7f09866d35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="animal.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
     <ClInclude Include="back.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="backgroundEvent.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="backgroundQueue.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="backMainQueue.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="backTimerQueue.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="elements.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="elementType.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="events.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="eventType.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="followerP.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="keyboardEvent.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="leaderP.h">
       <Filter>Header Files\back</Filter>
     </ClInclude>
     <ClInclude Include="macro.h">
       <Filter>Header Files\back</Filter>
     </ClInclude>
-    <ClInclude Include="mainEvent.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="map.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="mapNode.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="monster.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="moveEvent.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="moveTimerEvent.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="object.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="person.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files\back</Filter>
-    </ClInclude>
     <ClInclude Include="pos.h">
       <Filter>Header Files\back</Filter>
     </ClInclude>
-    <ClInclude Include="sign.h">
-      <Filter>Header Files\back</Filter>
+    <ClInclude Include="elements.h">
+      <Filter>Header Files\back\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="elementType.h">
+      <Filter>Header Files\back\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Header Files\back\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="backgroundEvent.h">
+      <Filter>Header Files\back\events</Filter>
+    </ClInclude>
+    <ClInclude Include="events.h">
+      <Filter>Header Files\back\events</Filter>
+    </ClInclude>
+    <ClInclude Include="eventType.h">
+      <Filter>Header Files\back\events</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboardEvent.h">
+      <Filter>Header Files\back\events</Filter>
+    </ClInclude>
+    <ClInclude Include="mainEvent.h">
+      <Filter>Header Files\back\events</Filter>
+    </ClInclude>
+    <ClInclude Include="moveEvent.h">
+      <Filter>Header Files\back\events</Filter>
+    </ClInclude>
+    <ClInclude Include="moveTimerEvent.h">
+      <Filter>Header Files\back\events</Filter>
     </ClInclude>
     <ClInclude Include="timerEvent.h">
-      <Filter>Header Files\back</Filter>
+      <Filter>Header Files\back\events</Filter>
+    </ClInclude>
+    <ClInclude Include="backgroundQueue.h">
+      <Filter>Header Files\back\queues</Filter>
+    </ClInclude>
+    <ClInclude Include="backMainQueue.h">
+      <Filter>Header Files\back\queues</Filter>
+    </ClInclude>
+    <ClInclude Include="backTimerQueue.h">
+      <Filter>Header Files\back\queues</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>Header Files\back\map</Filter>
+    </ClInclude>
+    <ClInclude Include="mapNode.h">
+      <Filter>Header Files\back\map</Filter>
+    </ClInclude>
+    <ClInclude Include="elementSign.h">
+      <Filter>Header Files\back\elements</Filter>
+    </ClInclude>
+    <ClInclude Include="animal.h">
+      <Filter>Header Files\back\elements\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="followerP.h">
+      <Filter>Header Files\back\elements\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="leaderP.h">
+      <Filter>Header Files\back\elements\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="monster.h">
+      <Filter>Header Files\back\elements\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="person.h">
+      <Filter>Header Files\back\elements\animals</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\back\elements\animals</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,9 +128,6 @@
     <ClCompile Include="backTimerQueue.cpp">
       <Filter>Source Files\back</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files\back</Filter>
-    </ClCompile>
     <ClCompile Include="map.cpp">
       <Filter>Source Files\back</Filter>
     </ClCompile>
@@ -129,6 +141,9 @@
       <Filter>Source Files\back</Filter>
     </ClCompile>
     <ClCompile Include="timerEvent.cpp">
+      <Filter>Source Files\back</Filter>
+    </ClCompile>
+    <ClCompile Include="back.cpp">
       <Filter>Source Files\back</Filter>
     </ClCompile>
   </ItemGroup>

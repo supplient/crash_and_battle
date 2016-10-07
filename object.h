@@ -3,7 +3,7 @@
 #define OBJECT_H
 
 #include "elementType.h"
-#include "sign.h"
+#include "elementSign.h"
 #include "pos.h"
 
 class object

@@ -1,29 +1,14 @@
-#include <iostream>
-using std::cout;
-using std::cin;
-
 #include "back.h"
 
-backgroundQueue bq;
+backgroundQueue bq;//todo
 backTimerQueue tq;
 backMainQueue mq;
 map m;
 
 player* iPlayer = new player;
 
-void proBackgroundEvent(backgroundEvent *);
-void proTimerEvent(timerEvent*);
-void proMainEvent(mainEvent*);
-
-void proMoveEvent(moveEvent * p);
-
-void proKeyboardEvent(keyboardEvent*);
-
-int main()
+void backProcess()
 {
-	keyboardEvent* initE=new keyboardEvent('w');
-	bq.push(static_cast<backgroundEvent*>(initE));
-
 	while (bq.size() != 0)
 	{
 		backgroundEvent * p = bq.pop();
@@ -48,8 +33,6 @@ int main()
 		proMainEvent(p);
 		delete p;
 	}
-
-	return 0;
 }
 
 void proBackgroundEvent(backgroundEvent* p)
@@ -116,12 +99,9 @@ void proMoveEvent(moveEvent* p)
 	object* target = p->getTarget();
 	pos op = target->getPos();
 	pos np = p->getTo();
-	
+
 	m.remove(op, target);
 	m.put(np, target);
 
 	//prepare send update_event for front
-	cout << "Complete~~" << std::endl;
-	int sus;
-	cin >> sus;
 }
