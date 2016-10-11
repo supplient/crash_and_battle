@@ -114,6 +114,9 @@
     <ClInclude Include="player.h">
       <Filter>Header Files\back\elements\animals</Filter>
     </ClInclude>
+    <ClInclude Include="Graphic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="animal.cpp">
@@ -145,6 +148,12 @@
     </ClCompile>
     <ClCompile Include="back.cpp">
       <Filter>Source Files\back</Filter>
+    </ClCompile>
+    <ClCompile Include="Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

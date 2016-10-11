@@ -153,6 +153,7 @@
     <ClInclude Include="events.h" />
     <ClInclude Include="eventType.h" />
     <ClInclude Include="followerP.h" />
+    <ClInclude Include="Graphic.h" />
     <ClInclude Include="keyboardEvent.h" />
     <ClInclude Include="leaderP.h" />
     <ClInclude Include="macro.h" />
@@ -175,6 +176,8 @@
     <ClCompile Include="backgroundQueue.cpp" />
     <ClCompile Include="backMainQueue.cpp" />
     <ClCompile Include="backTimerQueue.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="mapNode.cpp" />
     <ClCompile Include="moveTimerEvent.cpp" />

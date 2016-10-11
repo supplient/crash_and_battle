@@ -2,7 +2,8 @@
 
 enum elementSignChar
 {
-	OBJECT_CHAR='O'
+	OBJECT_CHAR='O',
+		ANIMAL_CHAR='A'
 };
 
 struct elementSignColor
