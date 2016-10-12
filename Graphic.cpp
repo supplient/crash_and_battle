@@ -1,7 +1,11 @@
 // ConsoleApplication4.cpp : 定义控制台应用程序的入口点。
 //
-
 #include"stdafx.h"
+#include <vector>
+#include <string>
+
+#include "Graphic.h"
+
 using namespace std;
 const int winH = 30, winW = 90;
 const int msX = 40, msY = 20;
@@ -68,7 +72,8 @@ int Init()
 }
 void Line(int start_x, int start_y, int length, int xoff=1,int yoff=0, wchar_t k=L'+')
 {
-	if (length < 0)abort();
+	if (length < 0)
+		abort();
 	COORD Start = { (short)start_x,(short)start_y };
 	wchar_t buffer[1];
 	buffer[0] = k;
@@ -145,7 +150,8 @@ void PushMsg(string msg)
 void DrawFrame()
 {
 	MapData* p = (MapData*)DataBox::GetInstance()->GetData();
-	if (p == 0)abort();
+	if (p == 0)
+		abort();
 	DrawMap(p->m_vecMap,mapOrigin.X,mapOrigin.Y);
 	DrawBox(msgBoxOrigin.X, msgBoxOrigin.Y, msgBoxSize.X + msgBoxOrigin.X, msgBoxSize.Y + msgBoxOrigin.Y);
 	DrawBox(infoBoxOrigin.X, infoBoxOrigin.Y, infoBoxSize.X + infoBoxOrigin.X, infoBoxSize.Y + infoBoxOrigin.Y);

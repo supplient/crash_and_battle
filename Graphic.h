@@ -3,22 +3,30 @@
 #include <windows.h>
 #include<string>
 #include<vector>
-int init();
+
+int Init();
 int update();
 void setMap(const char** map);
+
 class DataBox;
 enum DataType  { MAP_DATA };
+
+
 class Data
 {
 public:
 	friend class DataBox;
 	DataType m_eType;
 };
+
+
 class MapData:public Data
 {
 public:
 	char** m_vecMap;
 };
+
+
 class DataBox
 {
 public:
