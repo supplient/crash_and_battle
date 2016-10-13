@@ -148,6 +148,7 @@
     <ClInclude Include="backgroundQueue.h" />
     <ClInclude Include="backMainQueue.h" />
     <ClInclude Include="backTimerQueue.h" />
+    <ClInclude Include="Data.h" />
     <ClInclude Include="elements.h" />
     <ClInclude Include="elementType.h" />
     <ClInclude Include="events.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="backTimerQueue.cpp" />
     <ClCompile Include="Data.cpp" />
     <ClCompile Include="Graphic.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="mapNode.cpp" />
     <ClCompile Include="moveTimerEvent.cpp" />

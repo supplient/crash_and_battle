@@ -1,35 +1,43 @@
 #include "back.h"
 
-backgroundQueue bq;//todo
-backTimerQueue tq;
-backMainQueue mq;
+backgroundQueue* bq = backgroundQueue::getInstance();
+backTimerQueue* tq = backTimerQueue::getInstance();
+backMainQueue* mq = backMainQueue::getInstance();
 map m;
 
 player* iPlayer = new player;
 
+bool backInit()
+{
+	MapData* md=new MapData(m.getPaintingMap());
+	DataBox* db = DataBox::GetInstance();
+	db->SendData(md);
+	return true;
+}
+
 void backProcess()
 {
-	while (bq.size() != 0)
+	while (bq->size() != 0)
 	{
-		backgroundEvent * p = bq.pop();
+		backgroundEvent * p = bq->pop();
 		proBackgroundEvent(p);
 		delete p;
 	}
 
-	tq.countdown();
-	while (tq.size() != 0)
+	tq->countdown();
+	while (tq->size() != 0)
 	{
-		timerEvent* p = tq.top();
+		timerEvent* p = tq->top();
 		if (p->getTime() > 0)
 			break;
-		tq.pop();
+		tq->pop();
 		proTimerEvent(p);
 		delete p;
 	}
 
-	while (mq.size() != 0)
+	while (mq->size() != 0)
 	{
-		mainEvent* p = mq.pop();
+		mainEvent* p = mq->pop();
 		proMainEvent(p);
 		delete p;
 	}
@@ -56,22 +64,22 @@ void proKeyboardEvent(keyboardEvent* p)
 	case 'w':
 		np = pos(op.x, op.y - 1);
 		m = new moveTimerEvent(1, iPlayer, np);
-		tq.push(m);
+		tq->push(m);
 		break;
 	case 'a':
 		np = pos(op.x - 1, op.y);
 		m = new moveTimerEvent(1, iPlayer, np);
-		tq.push(m);
+		tq->push(m);
 		break;
 	case 's':
 		np = pos(op.x, op.y + 1);
 		m = new moveTimerEvent(1, iPlayer, np);
-		tq.push(m);
+		tq->push(m);
 		break;
 	case 'd':
 		np = pos(op.x + 1, op.y);
 		m = new moveTimerEvent(1, iPlayer, np);
-		tq.push(m);
+		tq->push(m);
 		break;
 	}
 }
@@ -80,7 +88,7 @@ void proKeyboardEvent(keyboardEvent* p)
 void proTimerEvent(timerEvent * p)
 {
 	mainEvent* np = p->turnToMainEvent();
-	mq.push(np);
+	mq->push(np);
 }
 
 

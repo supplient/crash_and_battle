@@ -5,7 +5,8 @@
 class monster:public animal
 {
 public:
-	monster():animal()
+	monster(elementSignChar _signChar = MONSTER_CHAR, elementSignColor _signColor = MONSTER_COLOR, elementType _type = MONSTER)
+		:animal(_signChar, _signColor, _type)
 	{
 	}
 

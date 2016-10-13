@@ -54,10 +54,11 @@ bool map::put(int x, int y, object * t)
 
 char ** map::getPaintingMap()
 {
-	char** res = new char*[MAP_SIZE];
-
+	vector<vector<char>> res;
+	res.resize(MAP_SIZE);
 	for (int i = 0; i < MAP_SIZE; i++)
-		res[i] = new char[MAP_SIZE];
+		res[i].resize(MAP_SIZE);
+
 	for (int x=0;x<MAP_SIZE;x++)
 		for (int y = 0; y < MAP_SIZE; y++)
 		{
@@ -67,7 +68,16 @@ char ** map::getPaintingMap()
 				res[x][y] = MAP_BLANK;
 		}
 
-	return res;
+	char** _res = new char*[MAP_SIZE];
+
+	for (int i = 0; i < MAP_SIZE; i++)
+	{
+		_res[i] = new char[MAP_SIZE];
+		for (int j = 0; j < MAP_SIZE; j++)
+			_res[i][j] = res[i][j];
+	}
+	
+	return _res;
 }
 
 bool map::random_generate()
@@ -131,7 +141,7 @@ bool map::random_generate()
 		{
 			for (int y = middle - offset; y <= middle + offset; y++)
 			{
-				bool flag = table[x][y].setContent(p);
+				flag = table[x][y].setContent(p);
 				if (flag)
 				{
 					p->setPos(pos(x, y));

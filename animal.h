@@ -11,7 +11,8 @@ using std::vector;
 class animal :public object
 {
 public:
-	animal():object()
+	animal(elementSignChar _signChar = ANIMAL_CHAR, elementSignColor _signColor = ANIMAL_COLOR, elementType _type = ANIMAL)
+		:object(_signChar, _signColor, _type)
 	{
 	}
 

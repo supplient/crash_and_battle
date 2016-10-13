@@ -8,9 +8,7 @@ using std::queue;
 class backMainQueue
 {
 public:
-	backMainQueue()
-	{
-	}
+	
 
 	~backMainQueue()
 	{
@@ -20,6 +18,14 @@ public:
 	void push(mainEvent*);
 	int size() { return wheel.size(); }
 
+	static backMainQueue* getInstance();
+
 private:
 	queue<mainEvent*> wheel;
+
+	static backMainQueue* onlyInstance;
+
+	backMainQueue()
+	{
+	}
 };

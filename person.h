@@ -7,7 +7,8 @@
 class person:public animal
 {
 public:
-	person() :animal()
+	person(elementSignChar _signChar = PERSON_CHAR, elementSignColor _signColor = PERSON_COLOR, elementType _type = PERSON)
+		:animal(_signChar, _signColor, _type)
 	{
 	}
 

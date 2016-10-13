@@ -1,39 +1,11 @@
 #pragma once
-#include "stdafx.h"
+#include"stdafx.h"
 #include <windows.h>
 #include<string>
 #include<vector>
 
+#include "Data.h"
+
 int Init();
 int update();
-void setMap(const char** map);
-
-class DataBox;
-enum DataType  { MAP_DATA };
-
-
-class Data
-{
-public:
-	friend class DataBox;
-	DataType m_eType;
-};
-
-
-class MapData:public Data
-{
-public:
-	char** m_vecMap;
-};
-
-
-class DataBox
-{
-public:
-	static DataBox* GetInstance();
-	void SendData(Data* pDa);
-	Data* GetData();
-private:
-	static DataBox* m_pBox;
-	std::vector<Data*> m_vecData;
-};
+void PushMsg(std::string msg);

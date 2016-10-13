@@ -20,7 +20,6 @@ struct cmp
 class backTimerQueue
 {
 public:
-	backTimerQueue() {}
 	~backTimerQueue() {}
 
 	bool push(timerEvent*);
@@ -30,6 +29,12 @@ public:
 
 	bool countdown();
 
+	static backTimerQueue* getInstance();
+
 private:
 	priority_queue<timerEvent*, vector<timerEvent*>, cmp> wheel;
+
+	static backTimerQueue* onlyInstance;
+
+	backTimerQueue() {}
 };

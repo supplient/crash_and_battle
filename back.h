@@ -6,6 +6,10 @@
 #include "events.h"
 #include "map.h"
 
+//front files
+#include "Data.h"
+
+bool backInit();
 
 void backProcess();
 

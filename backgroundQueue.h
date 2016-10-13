@@ -8,10 +8,6 @@ using std::queue;
 class backgroundQueue
 {
 public:
-	backgroundQueue()
-	{
-	}
-
 	~backgroundQueue()
 	{
 	}
@@ -20,6 +16,14 @@ public:
 	void push(backgroundEvent*);
 	int size() { return wheel.size(); }
 
+	static backgroundQueue* getInstance();
+
 private:
 	queue<backgroundEvent*> wheel;
+
+	static backgroundQueue* onlyInstance;
+
+	backgroundQueue()
+	{
+	}
 };

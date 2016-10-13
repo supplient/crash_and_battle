@@ -1,9 +1,5 @@
 // ConsoleApplication4.cpp : 定义控制台应用程序的入口点。
 //
-#include"stdafx.h"
-#include <vector>
-#include <string>
-
 #include "Graphic.h"
 
 using namespace std;
@@ -223,14 +219,5 @@ int update()
 		Flip();
 		KeyMsgProcess();
 	}
-}
-int main()
-{
-	Init();
-	//test
-	PushMsg("Use Up,Down,Left,Right Keys to move and  Esc to quit");
-	update();
-	system("pause");
-    return 0;
 }
 

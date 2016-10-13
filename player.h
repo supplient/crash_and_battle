@@ -5,7 +5,8 @@
 class player:public person
 {
 public:
-	player():person()
+	player(elementSignChar _signChar = PLAYER_CHAR, elementSignColor _signColor = PLAYER_COLOR, elementType _type = PLAYER)
+		:person(_signChar, _signColor, _type)
 	{
 	}
 

@@ -1,5 +1,7 @@
 #include "backTimerQueue.h"
 
+backTimerQueue* backTimerQueue::onlyInstance = new backTimerQueue;
+
 bool backTimerQueue::push(timerEvent * p)
 {
 	if (!p)
@@ -36,4 +38,12 @@ bool backTimerQueue::countdown()
 	}
 	wheel = temp;
 	return true;
+}
+
+backTimerQueue * backTimerQueue::getInstance()
+{
+	if (onlyInstance)
+		return onlyInstance;
+	onlyInstance = new backTimerQueue;
+	return onlyInstance;
 }
