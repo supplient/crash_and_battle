@@ -1,7 +1,7 @@
 // ConsoleApplication4.cpp : 定义控制台应用程序的入口点。
 //
-#include "Graphic.h"
 
+#include"stdafx.h"
 using namespace std;
 const int winH = 30, winW = 90;
 const int msX = 40, msY = 20;
@@ -11,7 +11,7 @@ CHAR_INFO buffer[winH*winW];
 
 HANDLE hOut, hOut2,hIn;
 
-int canvas[msY][msX] = { '0' };
+char canvas[msY][msX] = { 'a' };
 
 const COORD infoBoxSize = { 30,msY-3 };
 const COORD mapOrigin = { 5,2 };
@@ -68,8 +68,7 @@ int Init()
 }
 void Line(int start_x, int start_y, int length, int xoff=1,int yoff=0, wchar_t k=L'+')
 {
-	if (length < 0)
-		abort();
+	if (length < 0)abort();
 	COORD Start = { (short)start_x,(short)start_y };
 	wchar_t buffer[1];
 	buffer[0] = k;
@@ -123,8 +122,9 @@ int Encode(char ch, int color)
 	result &= ch;
 	return ch;
 }
-void DrawMap(char** cbuf,int x,int y)
+void DrawMap(char** ppcbuf,int x,int y)
 {
+	char(*cbuf)[msX] = (char(*)[msX])ppcbuf;
 	SMALL_RECT region = { x,y,x+msX-1,y+msY-1};
 	COORD origin = { 0,0 }, size = { msX,msY };
 	char c;
@@ -146,8 +146,7 @@ void PushMsg(string msg)
 void DrawFrame()
 {
 	MapData* p = (MapData*)DataBox::GetInstance()->GetData();
-	if (p == 0)
-		abort();
+	if (p == 0)abort();
 	DrawMap(p->m_vecMap,mapOrigin.X,mapOrigin.Y);
 	DrawBox(msgBoxOrigin.X, msgBoxOrigin.Y, msgBoxSize.X + msgBoxOrigin.X, msgBoxSize.Y + msgBoxOrigin.Y);
 	DrawBox(infoBoxOrigin.X, infoBoxOrigin.Y, infoBoxSize.X + infoBoxOrigin.X, infoBoxSize.Y + infoBoxOrigin.Y);
@@ -219,5 +218,18 @@ int update()
 		Flip();
 		KeyMsgProcess();
 	}
+}
+int main()
+{
+	Init();
+	//test
+	MapData *data=new MapData();
+	data->m_vecMap = (char**)canvas;//canvas为地图数组
+	DataBox::GetInstance()->SendData(data);
+	//
+	PushMsg("Use Up,Down,Left,Right Keys to move and  Esc to quit");
+	update();
+	system("pause");
+    return 0;
 }
 
