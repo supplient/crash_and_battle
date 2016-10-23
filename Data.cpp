@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include"Graphic.h"
 DataBox* DataBox::m_pBox = 0;
 DataBox* DataBox::GetInstance()
 {

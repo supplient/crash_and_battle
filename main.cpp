@@ -1,8 +1,5 @@
 #include "Graphic.h"
 #include "back.h"
-
-
-
 int main()
 {
 	Init();
