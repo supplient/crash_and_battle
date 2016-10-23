@@ -1,7 +1,6 @@
 // ConsoleApplication4.cpp : 定义控制台应用程序的入口点。
 //
-
-#include"stdafx.h"
+#include"Graphic.h"
 using namespace std;
 const int winH = 30, winW = 90;
 const int msX = 40, msY = 20;
@@ -218,18 +217,5 @@ int update()
 		Flip();
 		KeyMsgProcess();
 	}
-}
-int main()
-{
-	Init();
-	//test
-	MapData *data=new MapData();
-	data->m_vecMap = (char**)canvas;//canvas为地图数组
-	DataBox::GetInstance()->SendData(data);
-	//
-	PushMsg("Use Up,Down,Left,Right Keys to move and  Esc to quit");
-	update();
-	system("pause");
-    return 0;
 }
 
