@@ -147,6 +147,7 @@
     <ClInclude Include="backgroundEvent.h" />
     <ClInclude Include="backgroundQueue.h" />
     <ClInclude Include="backMainQueue.h" />
+    <ClInclude Include="backState.h" />
     <ClInclude Include="backTimerQueue.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="elements.h" />
@@ -177,6 +178,7 @@
     <ClCompile Include="back.cpp" />
     <ClCompile Include="backgroundQueue.cpp" />
     <ClCompile Include="backMainQueue.cpp" />
+    <ClCompile Include="backState.cpp" />
     <ClCompile Include="backTimerQueue.cpp" />
     <ClCompile Include="Data.cpp" />
     <ClCompile Include="Graphic.cpp" />

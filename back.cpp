@@ -9,6 +9,8 @@ player* iPlayer = new player;
 
 bool backInit()
 {
+	backState::getInstance();//backState init
+
 	return updateMap();
 }
 
@@ -20,6 +22,9 @@ void backProcess()
 		proBackgroundEvent(p);
 		delete p;
 	}
+
+	if (!backState::getRunningState())
+		return;
 
 	tq->countdown();
 	while (tq->size() != 0)
@@ -77,6 +82,9 @@ void proKeyboardEvent(keyboardEvent* p)
 		np = pos(op.x + 1, op.y);
 		m = new moveTimerEvent(1, iPlayer, np);
 		tq->push(m);
+		break;
+	case 'q':
+		backState::setRunningState(false);
 		break;
 	}
 }

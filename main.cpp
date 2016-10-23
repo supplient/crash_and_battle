@@ -2,14 +2,23 @@
 #include "back.h"
 int main()
 {
+	//front init
 	Init();
-	//test
-	PushMsg("Use Up,Down,Left,Right Keys to move and  Esc to quit");
 	//back init
 	backInit();
 
+	//hallo info
+	PushMsg("Use w,a,s,d Keys to move.");
 
-	update();
+	while (true)
+	{
+		update();
+		backProcess();
+
+		if (!backState::getRunningState())//quit
+			break;
+	}
+
 	system("pause");
 	return 0;
 }

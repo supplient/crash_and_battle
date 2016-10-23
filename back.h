@@ -5,6 +5,7 @@
 #include "elements.h"
 #include "events.h"
 #include "map.h"
+#include "backState.h"
 
 //front files
 #include "Data.h"
@@ -22,5 +23,5 @@ void proMoveEvent(moveEvent * p);
 void proKeyboardEvent(keyboardEvent*);
 
 
-// port with front
+//port with front
 bool updateMap();
