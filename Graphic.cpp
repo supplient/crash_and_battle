@@ -1,5 +1,6 @@
 // ConsoleApplication4.cpp : 定义控制台应用程序的入口点。
 //
+#include"back.h"
 #include"Graphic.h"
 using namespace std;
 const int winH = 30, winW = 90;
@@ -185,18 +186,22 @@ char KeyMsgProcess()
 			{
 				switch (record.Event.KeyEvent.wVirtualKeyCode)
 				{
-				case VK_DOWN:case VK_UP:case VK_LEFT:case VK_RIGHT:case VK_ESCAPE:
+				case VK_DOWN:case VK_UP:case VK_LEFT:case VK_RIGHT:case VK_ESCAPE:case VK_CONTROL:
 					//todo
 					reset = true;
 					c = record.Event.KeyEvent.wVirtualKeyCode;
 					bOut = true;
-				//	PushMsg("Some Function Key is pushed down");
+					proKeyboardEvent(new keyboardEvent(c));
+					PushMsg("Some Function Key is pushed down");
+					return 0;
 					break;
 				default:
 					c = record.Event.KeyEvent.uChar.AsciiChar;
 					bOut = true;
 					reset = true;
-					PushMsg("Some Alphabet Key is pushed down");
+					proKeyboardEvent(new keyboardEvent(c));
+					PushMsg("Some Other Key is pushed down");
+					return 0;
 					break;
 				}
 				if (c == K_MSGUP&&msgindex>0) {
@@ -206,16 +211,17 @@ char KeyMsgProcess()
 			}
 		}
 	}
-	return c;
+	return 1;
 }
 int update()
 {
 	int i = 0;
-	while(1)
+	do
 	{
 		DrawFrame();
 		Flip();
-		KeyMsgProcess();
 	}
+		while(KeyMsgProcess());
+	return 0;
 }
 
