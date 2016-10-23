@@ -10,10 +10,9 @@
 #include "Data.h"
 
 bool backInit();
-
 void backProcess();
 
-
+//back_inner process
 void proBackgroundEvent(backgroundEvent *);
 void proTimerEvent(timerEvent*);
 void proMainEvent(mainEvent*);
@@ -21,3 +20,7 @@ void proMainEvent(mainEvent*);
 void proMoveEvent(moveEvent * p);
 
 void proKeyboardEvent(keyboardEvent*);
+
+
+// port with front
+bool updateMap();

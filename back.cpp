@@ -9,10 +9,7 @@ player* iPlayer = new player;
 
 bool backInit()
 {
-	MapData* md=new MapData(m.getPaintingMap());
-	DataBox* db = DataBox::GetInstance();
-	db->SendData(md);
-	return true;
+	return updateMap();
 }
 
 void backProcess()
@@ -111,5 +108,13 @@ void proMoveEvent(moveEvent* p)
 	m.remove(op, target);
 	m.put(np, target);
 
-	//prepare send update_event for front
+	updateMap();
+}
+
+bool updateMap()
+{
+	MapData* md = new MapData(m.getPaintingMap());
+	DataBox* db = DataBox::GetInstance();
+	db->SendData(md);
+	return true;
 }

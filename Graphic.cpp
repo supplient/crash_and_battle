@@ -219,17 +219,4 @@ int update()
 		KeyMsgProcess();
 	}
 }
-int main()
-{
-	Init();
-	//test
-	MapData *data=new MapData();
-	data->m_vecMap = (char**)canvas;//canvas为地图数组
-	DataBox::GetInstance()->SendData(data);
-	//
-	PushMsg("Use Up,Down,Left,Right Keys to move and  Esc to quit");
-	update();
-	system("pause");
-    return 0;
-}
 
