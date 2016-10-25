@@ -4,7 +4,7 @@
 #include"Graphic.h"
 using namespace std;
 const int winH = 30, winW = 90;
-const int msX = 40, msY = 20;
+const int msX = 20, msY = 20;
 
 const COORD WinSize = { winW,winH };
 CHAR_INFO buffer[winH*winW];
@@ -124,7 +124,7 @@ int Encode(char ch, int color)
 }
 void DrawMap(char** ppcbuf,int x,int y)
 {
-	char(*cbuf)[msX] = (char(*)[msX])ppcbuf;
+	//char(*cbuf)[msX] = (char(*)[msX])ppcbuf;
 	SMALL_RECT region = { x,y,x+msX-1,y+msY-1};
 	COORD origin = { 0,0 }, size = { msX,msY };
 	char c;
@@ -132,7 +132,7 @@ void DrawMap(char** ppcbuf,int x,int y)
 	for (; i < msY; i++)
 		for (j = 0; j < msX; j++)
 		{
-		   buffer[i*msX + j].Char.AsciiChar = cbuf[i][j];
+		   buffer[i*msX + j].Char.AsciiChar = ppcbuf[j][i];
 		   buffer[i*msX + j].Attributes = FOREGROUND_INTENSITY;
 			//todo:COLOR
 		}
@@ -191,7 +191,8 @@ char KeyMsgProcess()
 					reset = true;
 					c = record.Event.KeyEvent.wVirtualKeyCode;
 					bOut = true;
-					proKeyboardEvent(new keyboardEvent(c));
+					backgroundQueue::getInstance()->push(new keyboardEvent(c));
+					//proKeyboardEvent(new keyboardEvent(c));
 					PushMsg("Some Function Key is pushed down");
 					return 0;
 					break;
@@ -199,7 +200,7 @@ char KeyMsgProcess()
 					c = record.Event.KeyEvent.uChar.AsciiChar;
 					bOut = true;
 					reset = true;
-					proKeyboardEvent(new keyboardEvent(c));
+					backgroundQueue::getInstance()->push(new keyboardEvent(c));
 					PushMsg("Some Other Key is pushed down");
 					return 0;
 					break;
