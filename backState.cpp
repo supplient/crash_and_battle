@@ -9,3 +9,5 @@
 //	onlyInstance = new backState();
 //	return onlyInstance;
 //}
+
+bool backState::running = false;

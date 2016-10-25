@@ -1,6 +1,6 @@
 #include "backgroundQueue.h"
 
-backgroundQueue* backgroundQueue::onlyInstance = new backgroundQueue;
+backgroundQueue* backgroundQueue::onlyInstance = backgroundQueue::onlyInstance ? backgroundQueue::onlyInstance : nullptr;
 
 backgroundEvent * backgroundQueue::pop()
 {
