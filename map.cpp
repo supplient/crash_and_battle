@@ -80,6 +80,15 @@ char ** map::getPaintingMap()
 	return _res;
 }
 
+bool map::canMove(pos op, pos np)
+{
+	if (!isValid(np))
+		return false;
+	if (table[np.x][np.y].getContent())
+		return false;
+	return true;
+}
+
 bool map::random_generate()
 {
 	table.resize(MAP_SIZE);
@@ -132,7 +141,7 @@ bool map::random_generate()
 	}
 
 	const int middle = MAP_SIZE / 2;
-	player* p = new player;
+	player* p = player::getInstance();
 	int exc_count = 0;
 	bool flag = false;
 	for (int offset = 0; offset < middle; offset++)

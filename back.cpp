@@ -5,7 +5,7 @@ backTimerQueue* tq = backTimerQueue::getInstance();
 backMainQueue* mq = backMainQueue::getInstance();
 map m;
 
-player* iPlayer = new player;
+player* iPlayer = player::getInstance();
 
 static bool hasUpdateMap = false;
 
@@ -119,11 +119,14 @@ void proMoveEvent(moveEvent* p)
 	object* target = p->getTarget();
 	pos op = target->getPos();
 	pos np = p->getTo();
-	target->setPos(np);
 
+	if (!m.canMove(op, np))
+		return;
+
+	target->setPos(np);
 	m.remove(op, target);
 	m.put(np, target);
-
+	
 	updateMap();
 }
 
