@@ -5,15 +5,23 @@
 class player:public person
 {
 public:
-	player(elementSignChar _signChar = PLAYER_CHAR, elementSignColor _signColor = PLAYER_COLOR, elementType _type = PLAYER)
-		:person(_signChar, _signColor, _type)
-	{
-	}
-
 	virtual ~player()
 	{
 	}
 
-private:
+	static player* getInstance()
+	{
+		if (onlyInstance)
+			return onlyInstance;
+		onlyInstance = new player;
+		return onlyInstance;
+	}
 
+private:
+	static player* onlyInstance;
+
+	player(elementSignChar _signChar = PLAYER_CHAR, elementSignColor _signColor = PLAYER_COLOR, elementType _type = PLAYER)
+		:person(_signChar, _signColor, _type)
+	{
+	}
 };

@@ -29,6 +29,8 @@ public:
 
 	char** getPaintingMap();
 
+	bool canMove(pos op, pos np);
+
 private:
 	 vector<vector<mapNode>> table;
 

@@ -2,8 +2,6 @@
 
 bool mapNode::setContent(object * _content)
 {
-	if (content)
-		return false;
 	content = _content;
 	return true;
 }

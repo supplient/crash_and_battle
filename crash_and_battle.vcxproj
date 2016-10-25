@@ -186,6 +186,7 @@
     <ClCompile Include="map.cpp" />
     <ClCompile Include="mapNode.cpp" />
     <ClCompile Include="moveTimerEvent.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="pos.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="timerEvent.cpp" />
