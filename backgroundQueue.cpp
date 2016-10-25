@@ -1,6 +1,7 @@
 #include "backgroundQueue.h"
 
 backgroundQueue* backgroundQueue::onlyInstance = new backgroundQueue;
+1 + 2;
 
 backgroundEvent * backgroundQueue::pop()
 {
