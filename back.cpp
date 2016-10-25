@@ -7,15 +7,19 @@ map m;
 
 player* iPlayer = new player;
 
+static bool hasUpdateMap = false;
+
 bool backInit()
 {
-	backState::getInstance();//backState init
+	backState::setRunningState(true);//backState init
 
 	return updateMap();
 }
 
 void backProcess()
 {
+	hasUpdateMap = false;
+
 	while (bq->size() != 0)
 	{
 		backgroundEvent * p = bq->pop();
@@ -43,6 +47,9 @@ void backProcess()
 		proMainEvent(p);
 		delete p;
 	}
+
+	if (!hasUpdateMap)
+		updateMap();
 }
 
 void proBackgroundEvent(backgroundEvent* p)
@@ -112,6 +119,7 @@ void proMoveEvent(moveEvent* p)
 	object* target = p->getTarget();
 	pos op = target->getPos();
 	pos np = p->getTo();
+	target->setPos(np);
 
 	m.remove(op, target);
 	m.put(np, target);
@@ -124,5 +132,6 @@ bool updateMap()
 	MapData* md = new MapData(m.getPaintingMap());
 	DataBox* db = DataBox::GetInstance();
 	db->SendData(md);
+	hasUpdateMap = true;
 	return true;
 }

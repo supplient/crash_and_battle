@@ -26,6 +26,8 @@ timerEvent * backTimerQueue::top()
 
 bool backTimerQueue::countdown()
 {
+	if (wheel.size() == 0)
+		return true;
 	if (wheel.top()->getTime() == 0)
 		return false;
 	priority_queue<timerEvent*, vector<timerEvent*>, cmp> temp;
